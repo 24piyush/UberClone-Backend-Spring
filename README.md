@@ -31,3 +31,22 @@ in the build.gradle if your main class has changed.
 
 You can refer our help documents [here](https://help.geektrust.in)
 You can read build instructions [here](https://github.com/geektrust/coding-problem-artefacts/tree/master/Java)
+
+# Use Case Diagram
+* Identify the actors
+* Identify the what the different actors can do
+* Focus on `what to do` and not `how to do`
+
+### Benefits of Use Case Diagram
+* This can directly shift into your `interfaces`.
+
+# Identify the core Entities
+* Nouns in requirements are possible candidates for Entities.
+* Verbs in the requirements are possible methods.
+* Ignore some of the nouns if we feel they won’t hold any vital information related to the problem description.
+* You might possibly store the identified entities in Database
+* Skip the nouns if they could be an attribute for any entity.
+  - “City” could be an entity but in some cases it is more likely to be an attribute. Like attribute to a Address Entity.
+
+[Image Description](image_path.png "Optional Title" =250x)
+
