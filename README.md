@@ -73,7 +73,8 @@ You can read build instructions [here](https://github.com/geektrust/coding-probl
     3. ### Aggregation
        There is `sense of ownership` but `no lifecycle dependency`.
 
-       We call Aggregation those relationships whose `objects have an independent life cycle`, but `there is ownership`, and `child objects cannot belong to another parent object`.
+       We call Aggregation those relationships whose `objects have an independent life cycle`, but `there is ownership`, and `child objects cannot belong to another parent object`.<br>
+       eg : Product and Shopkeeper - It is aggregation as shopkeeper is owning the product then buyer is owning a product.  
          
     2. ### Composition
        There is `sense of ownership` and also `lifecycle dependency`.
