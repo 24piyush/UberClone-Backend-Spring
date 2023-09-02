@@ -6,7 +6,7 @@ import com.geektrust.backend.repositories.IDriverRepository;
 
 public class DriverService implements IDriverService {
 
-    IDriverRepository driverRepository;
+    private IDriverRepository driverRepository;
 
     public DriverService(IDriverRepository driverRepository) {
         this.driverRepository = driverRepository;

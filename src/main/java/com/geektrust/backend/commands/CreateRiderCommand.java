@@ -24,7 +24,7 @@ public class CreateRiderCommand implements ICommand {
         Coordinates riderCoordinates = new Coordinates(rider_x_coordinate,rider_y_coordinate);
 
         Rider rider = riderService.createRider(rider_id, riderCoordinates);
-        System.out.println(rider);
+        //System.out.println(rider);
     }
     
 }

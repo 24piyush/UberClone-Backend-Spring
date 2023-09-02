@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
+import com.geektrust.backend.common.CommonFunctions;
 import com.geektrust.backend.entities.Coordinates;
 import com.geektrust.backend.entities.Driver;
 import com.geektrust.backend.entities.Rider;
@@ -14,8 +15,8 @@ import com.geektrust.backend.repositories.IRiderRepository;
 
 public class RiderService implements IRiderService {
 
-    IRiderRepository riderRepository;
-    IDriverRepository driverRepository;
+    private IRiderRepository riderRepository;
+    private IDriverRepository driverRepository;
 
     public RiderService(IRiderRepository riderRepository,IDriverRepository driverRepository) {
         this.riderRepository = riderRepository;
@@ -47,7 +48,7 @@ public class RiderService implements IRiderService {
         for (Driver driver : drivers) {
             if(driver.getRideId() != null) continue;
             Coordinates driver_coordinates = driver.getDriverCoordinates();
-            double distance = calculateDistance(rider_coordinates, driver_coordinates);
+            double distance = CommonFunctions.calculateDistance(rider_coordinates, driver_coordinates);
             if(distance > maximum_distance) continue;
             pq.add(new Pair(driver.getId(),distance));
 
@@ -61,16 +62,6 @@ public class RiderService implements IRiderService {
         }
         Collections.reverse(nearestDrivers);
         return nearestDrivers;
-    }
-
-    private double calculateDistance(Coordinates rider_coordinates, Coordinates driver_coordinates){
-        int rider_x = rider_coordinates.getX();
-        int rider_y = rider_coordinates.getY();
-        int driver_x = driver_coordinates.getX();
-        int driver_y = driver_coordinates.getY();
-
-        double distance = Math.sqrt(Math.pow(rider_x - driver_x, 2) + Math.pow(rider_y - driver_y, 2));
-        return distance;
     }
 
     private class Pair implements Comparable<Pair> {

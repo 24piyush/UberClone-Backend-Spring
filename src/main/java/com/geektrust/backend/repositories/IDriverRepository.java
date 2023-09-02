@@ -7,5 +7,6 @@ import com.geektrust.backend.entities.Driver;
 public interface IDriverRepository {
     public Driver save(Driver driver);
     public List<Driver> getAllDrivers();
+    public Driver getDriverById(String id);
     
 }

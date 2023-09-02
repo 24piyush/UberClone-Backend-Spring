@@ -24,5 +24,9 @@ public class DriverRepository implements IDriverRepository {
     public List<Driver> getAllDrivers() {
         return new ArrayList<>(driverMap.values());
     }
+
+    public Driver getDriverById(String id) {
+        return driverMap.get(id);
+    }
     
 }

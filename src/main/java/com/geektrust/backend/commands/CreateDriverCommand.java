@@ -23,7 +23,7 @@ public class CreateDriverCommand implements ICommand {
         Coordinates driverCoordinates = new Coordinates(driver_x_coordinate,driver_y_coordinate);
 
         Driver driver = driverService.createDriver(driver_id, driverCoordinates);
-        System.out.println(driver);
+        //System.out.println(driver);
     }
     
 }
